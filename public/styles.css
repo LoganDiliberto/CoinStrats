@@ -1,0 +1,12 @@
+body{
+    background-color: 	#808080;
+    text-align: center;
+}
+input{
+    border-radius: 25px;
+    border: 10px;
+}
+img{
+    width: 200px;
+    height: 200px;
+}

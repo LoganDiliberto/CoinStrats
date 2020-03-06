@@ -1,7 +1,12 @@
-var express = require("express");
-var request = require("request");
+const express = require("express");
+const request = require("request");
+const binance = require('binance-api-node').default
 let app = express();
 
+//Binance Stuff
+var burl = "https://api.binance.com";
+var query = "/api/v3/klines";
+var api = "https://api.binance.com/api/v1/klines?symbol=BNBBTC&interval=1m&startTime=1583308440000&endTime=1583308500000";
 //var apiKeys = require("aeriskey.json")
 //var key1 = apiKeys.clientid
 app.use(express.static("public"))
@@ -10,19 +15,11 @@ app.use(express.static("public"))
 app.get("/coin",function(req, res){
   var route = req.query.route
   const options = {
-    method: 'GET',
-    url: "https://www3.septa.org/hackathon/TransitView/6"
+      method: 'GET',
+      url: api
   };
       
     request(options, function (error, response, body) {
-    //alert(body)
-    /*const json = JSON.parse(body);
-    if (!json.success) {
-      console.error('Oh no!')
-    } else {
-        console.log("yes!")
-        res.send(body)   
-    }*/
         res.send(body)
   });  
 });

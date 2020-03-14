@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Bit Strats</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+		<link href="https://fonts.googleapis.com/css?family=Corben:bold" rel="stylesheet" type="text/css">
+		<link href="https://fonts.googleapis.com/css?family=Nobile" rel="stylesheet" type="text/css">
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/custom.css" rel="stylesheet">
+
+
+  </head>
+
+  <body>
+    <!--Side Bar Navigation -->
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="index.html">Home</a>
+      <a href="calculate.html">Calculate</a>
+      <a href="create.html">Create</a>
+      <a href="#">Contact</a>
+    </div>
+
+    <span class="open" onclick="openNav()">&#9776; open</span>
+
+    <div class="container-narrow">
+
+
+      <div class="jumbotron">
+        <h1>Create</h1>
+        <p class="lead">Create your own strategies for trading cryptocurrencies</p>
+      </div>
+
+      <hr>
+      <form>
+      <div class="row-fluid marketing" style="margin-top:-5px;
+margin-bottom:-10px;">
+        <div class="span6">
+          <div class="form-group">
+            <label for="minSell" >Minimum Sell Price:</label>
+            <input type="number"  step="any" id="minSell" name="minSell">
+          </div>
+          <div class="form-group">
+            <label for="minBuy">Minimum Buy Price:</label>
+            <input type="number"  step="any" id="minBuy" name="minBuy">
+          </div>
+          <div class="form-group" >
+              <label for="name" style="display: inline-block;">Name:</label>
+              <input type="text"  id="name" name="name">
+          </div>
+        </div>
+
+
+        <div class="span6">
+          <div class="form-group">
+            <label for="maxSell" >Maximum Sell Price:</label>
+            <input type="number"  step="any" id="maxBuy" name="maxBuy">
+          </div>
+          <div class="form-group">
+            <label for="maxBuy">Maximum Buy Price:</label>
+            <input type="number"  step="any" id="maxBuy" name="maxBuy">
+          </div>
+          <div style="text-align:center">
+            <button type="Calculate" class="btn btn-warning btn" id="createButton"><i class="fab fa-bitcoin"></i>Create!</button>
+          </div>
+        </div>
+      </div>
+      </form>
+      <hr>
+      <div id="results" style = "display:None;">
+        <p> Heres a alittle div to dispay results and form errors</p>
+      </div>
+
+      <div class="footer">
+
+      </div>
+
+    </div>
+
+
+    <script src="https://kit.fontawesome.com/585a642892.js" crossorigin="anonymous">
+    </script><script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+    <script src="./js/jquery-1.7.2.min.js"></script>
+    <script src="./js/jquery.backstretch.min.js"></script>
+    <script src="./js/custom.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+
+  </body>
+</html>

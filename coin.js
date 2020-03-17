@@ -1,6 +1,7 @@
 const express = require("express");
 const request = require("request");
 const binance = require('binance-api-node').default
+var mysql = require('mysql');
 let app = express();
 
 //Binance Stuff
@@ -10,6 +11,13 @@ var api = "https://api.binance.com/api/v1/klines?symbol=BNBBTC&interval=1m&start
 //var apiKeys = require("aeriskey.json")
 //var key1 = apiKeys.clientid
 app.use(express.static("public"))
+var mysql = require('mysql');
+
+var con = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "Guitars12"
+});
 
 //Requests the json file from weather api with my id
 app.get("/coin",function(req, res){

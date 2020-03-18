@@ -1,15 +1,7 @@
 $.backstretch("./img/BitcoinBackground.jpg");
 
 
-document.getElementById("button").onclick = function () {
-  $.backstretch("./img/" + document.getElementById("Image").value + ".jpg");
-  var image = "url(img/"+ document.getElementById('Color').value;
-  if(document.getElementById("transparent").checked){
-    image = image + "_transparent";
-  }
-  $('.container-narrow').css('background-image', image + ".png)");
 
-}
 
 function openNav() {
   var w = parseInt(window.innerWidth);

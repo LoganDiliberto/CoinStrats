@@ -1,18 +1,12 @@
 function sendInfo() {
-    var strats = "stoch"
-    var timestart = ""
-    var timeend = ""
-    strats = document.getElementById("strats").value
-    timestart = document.getElementById("start").value
-    timeend = document.getElementById("end").value
-    document.getElementById("test").innerHTML = strats + " " + timestart
 
-
+    console.log()
     //Gets the json file from the get request
     var xml = new XMLHttpRequest();
-    xml.addEventListener("load",displayData);
+    xml.addEventListener("load",displayData());
     xml.open("GET", "http://localhost:8080/coin")
     xml.send();
+    //displayData()
 }
 
 //displays failure if theres an error getting the json
@@ -22,7 +16,8 @@ function error(err){
 
 function displayData() {
     //console.log(this.body)
-    exampleMethod(JSON.parse(this.response))
+    //alert(this.response)
+    exampleMethod([])
 }
 
 function exampleMethod(json) {//This is a method that calculates the profit/loss and returns it based on a jsonfile
@@ -37,11 +32,11 @@ function exampleMethod(json) {//This is a method that calculates the profit/loss
 
     originalBTC = 1
     candles = json
-    openTimes = []
-    openPrice = []
-    highPrice = []
-    lowPrice = []
-    closePrice = []
+    openTimes = [10,10]
+    openPrice = ["0.00230740","0.00230870"]
+    highPrice = ["0.00230850","0.00230980"]
+    lowPrice = ["0.00230740","0.00230620"]
+    closePrice = ["0.00230740","0.00230820"]
     volume = []
     closeTimes = []
     for (i = 0; i < candles.length; i++) {
@@ -85,7 +80,9 @@ function exampleMethod(json) {//This is a method that calculates the profit/loss
         balanceBTC += price / buyingBalance//Sell your BTC for BNB
     }
     percent = balanceBTC / originalBTC
-    console.log("Percent: made or lost: "+(Math.round(percent*100)*10)/10 + "%")
+    console.log("Percent: made or lost: " + (Math.round(percent * 100) * 10) / 10 + "%")
+    alert("Percent: made or lost: " + (Math.round(percent * 100) * 10) / 10 + "%")
+
 }
 
 function createMethod(maximumBuy, maximumSell, minimumBuy, minimumSell, bPercent, sPercent, bBNB, bBTC) {
